@@ -11,7 +11,10 @@ let package = Package(
     .systemLibrary(
       name: "CX265",
       pkgConfig: "x265",
-      providers: [.brew(["x265"])]
+      providers: [
+        .brew(["x265"]),
+        .apt(["libx265-dev"]),
+      ]
     )
   ]
 )
