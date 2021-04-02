@@ -22,4 +22,12 @@ final class CX265Tests: XCTestCase {
 
     x265_encoder_close(encoder)
   }
+
+  func testAPI() {
+    guard let api = swift_x265_api_get(8) else {
+      XCTFail("Could not call macro x265_api_get")
+      return
+    }
+    XCTAssertEqual(X265_MAJOR_VERSION, api.pointee.api_major_version) 
+  }
 }
