@@ -15,6 +15,10 @@ let package = Package(
         .brew(["x265"]),
         .apt(["libx265-dev"]),
       ]
+    ),
+    .testTarget(
+      name: "CX265Tests",
+      dependencies: ["CX265"]
     )
   ]
 )
